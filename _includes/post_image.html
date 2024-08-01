@@ -1,0 +1,13 @@
+{% assign imgsplit = imgitem | split: "|" %}
+<div class="row">
+    <div class="container text-center">
+        <a href="{{imgsplit[0]}}" data-toggle="lightbox" data-caption="{{imgsplit[1]}}">
+        <figure class="figure text-center m-4">
+            <img src="{{imgsplit[0]}}" class="figure-img img-fluid w-75 mx-auto" alt="{{imgsplit[1]}}">
+            {% if imgsplit[1] != null and imgsplit[1] != "" %}
+            <figcaption class="figure-caption">{{imgsplit[1]}}</figcaption>
+            {% endif %}
+        </figure>
+        </a>
+    </div>
+</div>

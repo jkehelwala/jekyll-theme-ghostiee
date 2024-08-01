@@ -1,0 +1,8 @@
+- name : Conferences
+  items:
+  - 'Casper, J., & Smith, A. (2024). An Analysis of Lorem Ipsum: Applications and Implications. In Proceedings of the 10th International Conference on Placeholder Text and Formatting (pp. 123-130). Placeholder Press.'
+  - 'Doe, J., & Smith, A. (2024). An Analysis of Lorem Ipsum: Applications and Implications. In Proceedings of the 10th International Conference on Placeholder Text and Formatting (pp. 123-130). Placeholder Press.'
+
+- name: Journals
+  items: 
+  - 'Doe, J., & Smith, A. (2024). An Analysis of Lorem Ipsum: Applications and Implications. In Proceedings of the 10th International Conference on Placeholder Text and Formatting (pp. 123-130). Placeholder Press.'

@@ -1,0 +1,45 @@
+---
+layout: page
+title: Blog
+default_background: true
+---
+
+<div class="row" id="grid">
+    {% for post in paginator.posts %}
+    {% include item_grid.html %}
+    {% endfor %}
+</div>
+
+<!-- Pager -->
+{% if paginator.total_pages > 1 %}
+
+<div class="row">
+    <div class="container">
+        <nav aria-label="blog navigation">
+            <ul class="pagination justify-content-center">
+                <li class="page-item {% unless paginator.previous_page %} disabled {% endunless %}">
+                    <a class="page-link link-dark {% unless paginator.previous_page %} text-muted {% endunless %}"
+                        href="{% if paginator.previous_page %}{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}{% endif %}">Previous</a>
+                </li>
+                {% for page in (1..paginator.total_pages) %}
+                {% if page == paginator.page %}
+                <li class="page-item"><span class="page-link text-light bg-dark">{{ page }}</span>
+                    {% elsif page == 1 %}
+                <li class="page-item"><a class="page-link link-dark" href="{{ '/posts/' | relative_url }}">{{ page
+                        }}</a></li>
+                {% else %}
+                <li class="page-item"><a class="page-link link-dark"
+                        href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a></li>
+                {% endif %}
+                {% endfor %}
+                <li class="page-item {% unless paginator.next_page %} disabled {% endunless %}">
+                    <a class="page-link link-dark {% unless paginator.next_page %} text-muted {% endunless %}"
+                        href="{% if paginator.next_page %}{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}{% endif %}">Next</a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</div>
+
+{% endif %}

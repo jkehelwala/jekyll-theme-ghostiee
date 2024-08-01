@@ -1,0 +1,32 @@
+<div class="col-sm-6 col-md-4 col-lg-4 mb-4">
+    <div class="card shadow-sm border-light-subtle">
+        {% if post.categories contains 'archived' %}
+        <span class="badge text-bg-dark position-absolute top-0 m-2"> Archived </span>
+        {% endif %}
+        <img src="{{post.thumbnail}}" class="card-img-top" alt="post-thumbnail">
+        <div class="card-body">
+          <h5 class="card-title">{{ post.title }}</h5>
+          {% if post.subtitle %}
+          <p class="fs-5" class="post-subtitle">{{ post.subtitle }}</p>
+          {% endif %}
+          <p class="card-text">
+            {{ post.excerpt | replace: "<br />", "&#183;" | strip_html | truncatewords: 30 | replace: "&#183;", "<br />"}}
+          </p>
+          <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}" class="btn btn-dark stretched-link">View</a>
+        </div>
+        {% unless post.layout == 'collection' %}
+        <div class="card-footer">
+          <small class="text-body-secondary">
+              <!-- Posted
+                {% if site.author %}
+                by {{ site.author }}
+                {% endif %}
+                on -->
+                {{ post.date | date: '%B %d, %Y' }} &middot; 
+                {%  include read_time.html content=post.content %}
+          </small>
+        </div>
+        {% endunless %}
+    </div>
+</div>
+

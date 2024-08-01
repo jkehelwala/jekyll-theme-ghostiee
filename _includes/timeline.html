@@ -1,0 +1,46 @@
+<div class="table-responsive">
+<table class="table table-borderless">
+  <tbody>
+    {% for exp in site.data.timeline limit:site.data.home.navlims.timeline  %}
+    <div class="row ms-5">
+      {% for designation in exp.titles %}
+      <tr class="align-middle">
+        <th scope="col" class="col-2 text-end text-secondary fw-normal">
+          <small>{{ designation.duration }}</small>
+        </th>
+        <td class="text-center">
+          {% if forloop.first %}
+          <span class="fs-3 text-muted">
+            <i class="fa-solid {{ exp.icon }}"></i>
+          </span>
+          {% else %}
+          <div class="vr"></div>
+          {% endif %}
+        </td>
+        <td>
+          {% if forloop.first %}
+          <div class="fs-3"> <strong> {{designation.text}} </strong> </div>
+          {% else %}
+          <div class="fs-4"> {{designation.text}} </div>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+      <tr class="align-top">
+        <td></td>
+        <td class="text-center">
+            <div class="vr"></div>
+        </td>
+        <td class="text-secondary">
+          <div class="pb-5">
+            {{ exp.org }}, {{exp.addr}} 
+            {% if exp.nb %}
+            <br /> ({{ exp.nb }}) </p>
+            {% endif%}
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+  </tbody>
+</table>
+</div>

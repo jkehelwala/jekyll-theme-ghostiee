@@ -1,0 +1,21 @@
+---
+layout: page
+---
+
+    <div class="row">
+        {% assign check_content = content | strip_newlines %}
+        {% if check_content == ""  %}
+        <p> {{ page.excerpt }} </p>
+        {% else %}
+        <div class="container">
+        {{ content }}
+        </div>
+        {% endif %}
+    </div>
+    <div class="row" id="grid">
+        {% assign catPages = site.posts | sort: 'date' | reverse | where_exp: "item", "item.categories contains page.cat_filter" %}
+        <!-- Colleciton Post List -->
+        {% for post in catPages %}
+        {% include item_grid.html %}
+        {% endfor %}
+    </div>

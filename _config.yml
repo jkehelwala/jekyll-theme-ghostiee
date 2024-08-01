@@ -1,0 +1,32 @@
+# Welcome to Jekyll!
+
+title: Casper the ghost
+email: casper@ghosts.afterlife
+description: "Friend, even in death"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+author: Casper
+
+# Build settings
+plugins:
+ - jekyll-feed
+ - jekyll-coffeescript
+ - jekyll-paginate
+ - jekyll-sitemap
+
+paginate:           12
+paginate_path:      "/posts/page:num/"
+
+sass:
+  sass_dir: _sass
+  style: compressed
+   
+
+# Exclude from processing.
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - README.md

@@ -1,0 +1,13 @@
+---
+title: 'Collections'
+layout: page
+permalink: /collections/
+default_background: true
+---
+
+<div class="row" id="grid">
+    {% assign collection_pages = site.pages | where_exp: 'page', "page.url contains 'collection/'" | sort:"priority"  %}
+    {% for post in collection_pages %}
+    {% include item_grid.html %}
+    {% endfor %}
+</div>

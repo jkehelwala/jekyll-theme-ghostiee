@@ -1,0 +1,36 @@
+- name : Twitter
+  enabled: true
+  link: "https://twitter.com/#"
+  faicon: "fab fa-twitter"
+- name : Github
+  enabled: true
+  link: "https://github.com/#"
+  faicon: "fab fa-github"
+- name: Facebook
+  enabled: true
+  link: "https://www.facebook.com/#"
+  faicon: "fab fa-facebook-f"
+- name: Linkedin
+  enabled: true
+  link: "https://www.linkedin.com/in/#"
+  faicon: "fab fa-linkedin"
+- name: Tumblr
+  enabled: true
+  link: "#"
+  faicon: "fab fa-tumblr"
+- name: Instagram
+  enabled: true
+  link: "https://instagram.com/#"
+  faicon: "fab fa-instagram"
+- name: ORCID
+  enabled: true
+  link: "https://orcid.org/#"
+  faicon: "fab fa-orcid"
+- name: Google Scholar
+  enabled: true
+  link: "https://scholar.google.com/citations?user=#"
+  faicon: "fab fa-google-scholar"
+- name: Research Gate
+  enabled: true
+  link: "https://www.researchgate.net/profile/#"
+  faicon: "fab fa-researchgate"

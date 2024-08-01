@@ -1,0 +1,45 @@
+{% if page.background %}
+<header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
+{% elsif page.default_background %}
+<header class="masthead" style="background-image: url('{{ site.data.home.img.blog_header | prepend: site.baseurl | replace: '//', '/' }}')">
+{% else %}
+<header class="masthead">
+{% endif %}
+<div class="container position-relative px-4 px-lg-5">
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-10 col-xl-10">
+          <div class="site-heading">
+            {% if page.layout == 'home' %}
+            <h1>{{ site.title }}</h1>
+            {% else %}
+            <h1>{{ page.title }}</h1>
+            {% endif %}
+            {% if page.layout == 'home' %}
+            <span class="subheading pt-2 lh-base">{{ site.description }}</span>
+            {% endif %}
+            {% if page.subtitle %}
+            <span class="subheading pt-2 lh-base">{{ page.subtitle }}</span>
+            {% endif %}
+            {% if page.layout == 'post' %}
+            <div class="clearfix mt-5">
+            <span class="fs-6 fw-light text-light"> Posted
+              {% if site.author %}
+              by {{ site.author }}
+              {% endif %}
+              on
+              {{ page.date | date: '%B %d, %Y' }} &middot; 
+              {%  include read_time.html content=page.content %}
+            </span>
+            {% if page.categories contains 'archived' %}
+              <span class="fs-6 badge text-bg-dark mx-2">
+                Archived
+              </span>
+            {% endif %}
+            </div>
+            {% endif %}
+          </div>
+      </div>
+  </div>
+</div>
+
+</header>

@@ -1,0 +1,77 @@
+---
+layout: default
+---
+{% assign structure = site.data.home %}
+
+<!-- Container immediately following masthead - Body background -->
+{% if structure.about.enabled %}
+<div class="container-fluid px-4 px-lg-5 pb-5 {{ structure.about.bgcss }}">
+    <div class="container">
+        <div class="fs-1 my-5 c-header">About Me</div>
+        <div class="row">
+            <!-- Image Column -->
+            <div class="col-md-4 pe-md-5 pb-4">
+                <img src="{{site.data.home.img.profile}}" class="img-fluid rounded-circle" alt="Profile Image">
+            </div>
+            <!-- Text Column -->
+            <div class="col-md-8 pb-2 pt-sm-2">
+                {% for item in site.data.about %}
+                <p class="my-3"> {{item}} </p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-md-12">
+            <div class="pt-3">
+                {% include socials.html %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% if structure.sci_pubs.enabled %}
+<div class="container-fluid px-4 px-lg-5 py-5 {{ structure.sci_pubs.bgcss }}">
+    <div class="container c-scipub">
+        <div class="fs-1 mb-5 c-header">Research</div>
+        {% for pubcat in site.data.scipub %}
+            <div class="fs-2 mb-3 c-header">{{ pubcat.name }}</div>
+            <div class="my-5 border-bottom">
+                <ul class="fa-ul">
+                {% for ppr in pubcat.items %}
+                <li class="mb-5"><span class="fa-li pe-5"><i class="fa-solid fa-caret-right"></i></span> {{ ppr }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+{% if structure.timeline.enabled %}
+<div class="container-fluid px-4 px-lg-5 py-5 {{ structure.timeline.bgcss }}">
+    <div class="container">
+        <div class="fs-1 mb-5 c-header">Timeline</div>
+        <div class="mb-5">
+            {% include timeline.html %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% if structure.blog_summary.enabled %}
+<div class="container-fluid px-4 px-lg-5 py-5 {{ structure.blog_summary.bgcss }}">
+    <div class="container">
+        <div class="fs-1 mb-5 c-header">Blog Posts</div>
+        <div class="row" id="grid">
+            {% for post in site.categories.featured limit:site.data.home.navlims.blog_summary  %}
+            {% include item_grid.html %}
+            {% endfor %}
+        </div>
+        <div class="d-flex justify-content-center">
+            <a class="btn btn-block btn-dark mt-5" href="{{"/posts" | relative_url }}">View All Posts</a>
+        </div>
+    </div>
+</div>
+{% endif %}

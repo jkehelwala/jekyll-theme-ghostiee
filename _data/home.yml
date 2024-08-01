@@ -1,0 +1,24 @@
+img:
+  profile: /themeimgs/brand/about_me_img.png # Must be square
+  navlogo: /themeimgs/brand/logo.png
+  favicon: /favicon.ico
+  blog_header: /themeimgs/brand/blog_header.jpg
+  blog_header_credits:  'Photo by <a href="https://unsplash.com/@yukay?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Erik Müller</a> on <a href="https://unsplash.com/photos/grayscale-photo-of-person-standing-inside-building-zrfD9aVUVsU?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>'
+
+# Home page layout
+about:
+  enabled: true
+  bgcss: 'bg-body'
+sci_pubs:
+  enabled: true
+  bgcss: 'bg-light'
+timeline:
+  enabled: true
+  bgcss: 'bg-body'
+blog_summary:
+  enabled: true
+  bgcss: 'bg-light'
+
+navlims:
+  blog_summary: 6
+  timeline: 7

@@ -1,0 +1,23 @@
+- titles: 
+    - text: Ghost General
+      duration: Mar 2021 - Present
+  org: TheOtherSide Cemetery
+  addr: 06, Afterlife
+  icon: fa-book-open
+
+- titles: 
+  - text: Professional Haunter
+    duration: Jan 2019 - Jan 2021
+  - text: Junior Haunter
+    duration: Jan 2019 - Jan 2017
+  org: That House There
+  addr: Somewhere, World
+  icon: fa-briefcase
+
+- titles: 
+  - text: BA in Haunting
+    duration: Jan 2015 - Jun 2017
+  org: Ghost Academy
+  addr: 07, Afterlife
+  icon: fa-graduation-cap
+  nb: 'First class honours'

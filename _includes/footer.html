@@ -1,0 +1,23 @@
+<footer class="border-top pt-5 border-light shadow">
+  <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-md-10">
+              {% include socials.html %}
+              {% if page.credits %}
+              <div class="text-center text-body-secondary fs-6 custom-cred-link">{{ page.credits | markdownify | remove: '<p>' | remove: '</p>' }}</div>
+              {% endif %}
+              <div class="text-center text-muted fs-6 my-1"> <small> <a class="link-secondary" href="/credits/">Credits</a> </small> </div>
+              <div class="text-center text-muted fs-6">Copyright &copy; {{ site.author }} {{ 'now' | date: "%Y" }} </div>
+          </div>
+      </div>
+  </div>
+</footer>
+
+<script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/vendor/startbootstrap/js/scripts.js"></script>
+<script src="/assets/vendor/bslightbox/index.bundle.min.js"></script>
+<script src="/assets/js/custom.js"></script>
+{% if content contains 'id="grid"' %}
+<script src="/assets/vendor/masonry/masonry.min.js"></script>
+<script src="/assets/js/grid.js"></script>
+{% endif %}

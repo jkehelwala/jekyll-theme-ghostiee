@@ -1,0 +1,25 @@
+<div class="d-block p-gallery my-5">
+    <div id="carouselGalleryCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-theme="dark">
+        <div class="carousel-inner">
+            {% for item in page.gallery %}
+            <div class="carousel-item  {% if forloop.first == true %} active {% endif %}">
+                {% assign imgsplit = item | split: "|" %}
+                <img src="{{ imgsplit[0] }}" class="d-block w-100 h-100" alt="">
+                {% if imgsplit[1] != null and imgsplit[1] != "" %}
+                <div class="carousel-caption d-none d-md-block">
+                <span>{{ imgsplit[1] }}</span>
+                </div>
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGalleryCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselGalleryCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
