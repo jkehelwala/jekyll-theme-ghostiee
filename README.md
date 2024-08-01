@@ -1,6 +1,12 @@
 # jekyll-theme-ghostiee
 
-To preview this theme, please clone this repository and run `bundle exec jekyll serve`
+A theme for personal websites and blogging pages. (N.B gif is cropped by 280px from the right) 
+
+![Preview](themeimgs/preview.gif)
+
+To preview this theme live, clone this repository and run `bundle exec jekyll serve`
+
+Before you use this theme, please note that [Start Bootstrap - Clean Blog Jekyll](https://github.com/StartBootstrap/startbootstrap-clean-blog-jekyll) theme may suit you better, which already comes as a rubygem. In addition, please refer to `assets/pages/credits.html` to note content used to create this theme.
 
 ## Installation
 
@@ -14,8 +20,9 @@ gem "jekyll-theme-ghostiee", git: "https://github.com/jkehelwala/jekyll-theme-gh
 ```
 
 Note: For local testing, you could build the gemfile and direct to it as below
+
 ```ruby
-gem "jekyll-theme-ghostiee", git: "<folder containing .gem file>"
+gem "jekyll-theme-ghostiee", path: "<local folder containing .gem file>"
 ```
 
 Run following
@@ -40,35 +47,35 @@ Please add below lines to your index file yaml.  Also note that any content insi
 ```yaml
 title: <Your index page title>
 default_background: true
-
 ```
 
-When you run `jekyll serve`, it will provide an error mentioning 404.html page is duplicated. Please delete the default generated 404.html page so theme's 404 styling from `assets/pages/404.html` would take effect.
+If you have default 404 file elsewhere, it will conflict with the theme's 404 page at  `assets/pages/404.html`.
 
-This theme does not provide any specific "about" file. The default generated file could be deleted/edited as desired. For page styling, refer to `assets/pages/credits.html` page.
+This theme does not provide any specific "about" file.
 
-To enable the "/posts/" page, please create "posts/index.html" file, and add the content in the theme's posts/index.html file. 
+The sections in the home page can be enabled or disabled using `_data/home.yml` file.
 
-Afterwards, add below variables to your `_config.yml`
+For custom default page styling, refer to `assets/pages/credits.html` page.
+
+To enable the "/posts/" page and pagination for the blog, please replicate the theme's `posts/index.html` file in the same location. Afterwards, add below variables to your `_config.yml`
 
 ```yaml
 paginate:           12
 paginate_path:      "/posts/page:num/"
 ```
 
-Site posts have to have a certain format for this theme to be able to process them. Specifically, refer to the `_includes/item_grid.html` file to find out what variables require to be defined. 
-Index page only shows 6 posts that belog to "featured" category. 
+Site posts have to have a certain frontmatter for this theme to be able to process them. Specifically, refer to a sample post in the theme or `_includes/item_grid.html` file to find out what variables require to be defined. 
+Index page only shows 6 posts that belog to "featured" category.
 
-For collections, collection names should be defined in each post under `categories :`, and `collections/<category_page_name>.md` must be created by the user with the `cat_filter: ` yaml matter defining which category to display. 
+For collections, collection names should be defined in each post under `categories :`, and `collections/<category_page_name>.md` must be created by the user with the `cat_filter: ` frontmatter defining which category to display. 
 
 Please refer to `_layout` and `_includes` folders for more details. 
-
-## Usage
 
 Please copy/adjust content in `collections` and `assets/pages` folders to suit your needs. 
 
 It is most important to refer to the `_data` folder from the theme's files, and overwrite the data as needed.
 
+Pay attention to `site.email` and `site.author` variables, as they must be overwritten with "" values or the theme values would be shown in your site.
 
 ## Contributing
 

@@ -1,5 +1,5 @@
 <ul class="list-inline text-center">
-    {% if site.email %}
+    {% if site.email and site.email != "" %}
     <li class="list-inline-item pt-2">
       <a href="mailto:{{ site.email | encode_email }}">
         <span class="fa-stack fa-lg">

@@ -34,3 +34,7 @@
   enabled: true
   link: "https://www.researchgate.net/profile/#"
   faicon: "fab fa-researchgate"
+- name: Medium
+  enabled: false
+  link: 'https://medium.com/#'
+  faicon: "fab fa-medium"

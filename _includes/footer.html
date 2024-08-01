@@ -7,7 +7,11 @@
               <div class="text-center text-body-secondary fs-6 custom-cred-link">{{ page.credits | markdownify | remove: '<p>' | remove: '</p>' }}</div>
               {% endif %}
               <div class="text-center text-muted fs-6 my-1"> <small> <a class="link-secondary" href="/credits/">Credits</a> </small> </div>
-              <div class="text-center text-muted fs-6">Copyright &copy; {{ site.author }} {{ 'now' | date: "%Y" }} </div>
+              <div class="text-center text-muted fs-6">Copyright &copy;
+                {% if site.author and site.author != "" %}
+                {{ site.author }}
+                {% endif %}
+                {{ 'now' | date: "%Y" }} </div>
           </div>
       </div>
   </div>
