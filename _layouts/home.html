@@ -6,8 +6,10 @@ layout: default
 <!-- Container immediately following masthead - Body background -->
 {% if structure.about.enabled %}
 <div class="container-fluid px-4 px-lg-5 pb-5 {{ structure.about.bgcss }}">
-    <div class="container">
-        <div class="fs-1 my-5 c-header">About Me</div>
+    <div class="container pt-5">
+        {% if structure.about.title and structure.about.title != "" %}
+        <div class="fs-1 mb-5 c-header">{{ structure.about.title }}</div>
+        {% endif %}
         <div class="row">
             <!-- Image Column -->
             <div class="col-md-4 pe-md-5 pb-4">
@@ -34,7 +36,9 @@ layout: default
 {% if structure.sci_pubs.enabled %}
 <div class="container-fluid px-4 px-lg-5 py-5 {{ structure.sci_pubs.bgcss }}">
     <div class="container c-scipub">
-        <div class="fs-1 mb-5 c-header">Research</div>
+        {% if structure.sci_pubs.title and structure.sci_pubs.title != "" %}
+        <div class="fs-1 mb-5 c-header">{{ structure.sci_pubs.title }}</div>
+        {% endif %}
         {% for pubcat in site.data.scipub %}
             <div class="fs-2 mb-3 c-header">{{ pubcat.name }}</div>
             <div class="my-5 border-bottom">
@@ -52,7 +56,9 @@ layout: default
 {% if structure.timeline.enabled %}
 <div class="container-fluid px-4 px-lg-5 py-5 {{ structure.timeline.bgcss }}">
     <div class="container">
-        <div class="fs-1 mb-5 c-header">Timeline</div>
+        {% if structure.timeline.title and structure.timeline.title != "" %}
+        <div class="fs-1 mb-5 c-header">{{ structure.timeline.title }}</div>
+        {% endif %}
         <div class="mb-5">
             {% include timeline.html %}
         </div>
@@ -63,9 +69,11 @@ layout: default
 {% if structure.blog_summary.enabled %}
 <div class="container-fluid px-4 px-lg-5 py-5 {{ structure.blog_summary.bgcss }}">
     <div class="container">
-        <div class="fs-1 mb-5 c-header">Blog Posts</div>
+        {% if structure.blog_summary.title and structure.blog_summary.title != "" %}
+        <div class="fs-1 mb-5 c-header">{{ structure.blog_summary.title }}</div>
+        {% endif %}
         <div class="row" id="grid">
-            {% for post in site.categories.featured limit:site.data.home.navlims.blog_summary  %}
+            {% for post in site.categories.featured limit:structure.blog_summary.navlim  %}
             {% include item_grid.html %}
             {% endfor %}
         </div>

@@ -7,18 +7,20 @@ img:
 
 # Home page layout
 about:
+  title: 'About Me'
   enabled: true
   bgcss: 'bg-body'
 sci_pubs:
+  title: 'Research'
   enabled: true
   bgcss: 'bg-light'
 timeline:
+  title: 'Timeline'
   enabled: true
   bgcss: 'bg-body'
+  navlim: 7
 blog_summary:
+  title: 'Blog Posts'
   enabled: true
   bgcss: 'bg-light'
-
-navlims:
-  blog_summary: 6
-  timeline: 7
+  navlim: 6
