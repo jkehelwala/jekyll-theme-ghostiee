@@ -11,7 +11,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto py-4 py-lg-0">
                 {% for item in site.data.navmenu %}
-                  <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ item.link }}">{{ item.name }}</a></li>
+                  <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="{{ item.link }}"  {% if item.blank  %} target="_blank" {% endif %}>{{ item.name }}</a></li>
                 {% endfor %}
             </ul>
         </div>

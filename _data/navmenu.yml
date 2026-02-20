@@ -4,3 +4,4 @@
   link: "/posts/"
 - name: Collections
   link: "/collections/"
+  blank: true
